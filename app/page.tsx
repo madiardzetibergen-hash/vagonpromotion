@@ -15,7 +15,7 @@ function Icon({ name }: { name: string }) {
 }
 
 const calculateMessage = "Здравствуйте, хочу рассчитать размещение рекламы в поездах";
-const mediaKitHref = "/media/ktz-media-kit.pdf";
+const mediaKitHref = "/media/train-ads-presentation-2026.pdf";
 const videoHref = "/media/train-ads-video.mp4";
 
 function BrandLogo() {
