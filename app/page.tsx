@@ -135,7 +135,7 @@ function Pricing() {
     <section className="section light pricingCaseSection" id="pricing">
       <div className="container pricingInner">
         <SectionTitle
-          eyebrow="Прайс-лист 2025"
+          eyebrow="Прайс-лист 2026"
           title="Тарифы на размещение рекламы"
         />
         <div className="pricingBox">
@@ -181,17 +181,17 @@ function CaseStudy() {
       <div className="container caseGrid">
         <div className="caseText">
           <span>Кейс</span>
-          <h2>QAZAQ OIL</h2>
-          <p>Экстерьер вагонов для узнаваемости бренда на ключевых маршрутах.</p>
+          <h2>Kaspi.kz</h2>
+          <p>Брендирование вагона для заметного контакта с пассажирами на маршрутах и станциях.</p>
           <div className="casePoints">
-            <div><b>Задача</b><p>Повысить видимость бренда в дороге и на станциях.</p></div>
-            <div><b>Решение</b><p>Брендирование вагонов фирменными цветами и логотипом.</p></div>
-            <div><b>Результат</b><p>Постоянный визуальный контакт с пассажирами и посетителями вокзалов.</p></div>
+            <div><b>Задача</b><p>Показать бренд в реальной пассажирской среде и усилить узнаваемость в пути.</p></div>
+            <div><b>Решение</b><p>Оклейка наружной поверхности вагона с визуальной историей Kaspi.kz.</p></div>
+            <div><b>Результат</b><p>Постоянный визуальный контакт с пассажирами и посетителями станций.</p></div>
           </div>
           <a className="button secondary" href={videoHref} target="_blank">Смотреть кейс</a>
         </div>
         <div className="caseVideo">
-          <video controls preload="metadata" poster="/images/case-qazaq-oil.png">
+          <video controls preload="metadata">
             <source src={videoHref} type="video/mp4" />
           </video>
         </div>

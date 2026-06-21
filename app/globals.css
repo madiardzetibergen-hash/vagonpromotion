@@ -253,13 +253,13 @@ input:focus,select:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 
   .sectionTitle{text-align:left;margin-bottom:28px}
   .sectionTitle span{justify-content:flex-start}
   .sectionTitle h2,.contactCopy h2{font-size:29px}
-  .formatGrid{grid-template-columns:1fr 1fr;gap:12px}
-  .formatCard{grid-template-rows:1fr}
-  .formatImage{display:none}
-  .formatBody{min-height:142px;padding:16px 10px;text-align:center;place-items:center;align-content:center}
-  .formatBody span{width:46px;height:46px;font-size:24px}
-  .formatBody h3{font-size:13px}
-  .formatBody p{display:none}
+  .formatGrid{grid-template-columns:1fr;gap:14px}
+  .formatCard{grid-template-rows:210px 1fr}
+  .formatImage{display:block}
+  .formatBody{min-height:auto;padding:18px;text-align:left;place-items:start;align-content:start}
+  .formatBody span{width:44px;height:44px;font-size:24px}
+  .formatBody h3{font-size:18px}
+  .formatBody p{display:block;font-size:13px}
   .benefitGrid,.processLine{grid-template-columns:1fr}
   .videoCaption{grid-template-columns:1fr}
   .videoCaption .button{width:100%}
