@@ -1,7 +1,7 @@
 export const SITE = {
   name: "Пассажирские перевозки - рекламные возможности",
   shortName: "Market Radio",
-  domain: "https://example.kz",
+  domain: "https://promotion-railways.kz",
   phoneDisplay: "+7 705 470 6607",
   phoneHref: "+77054706607",
   secondaryPhoneDisplay: "+7 747 919 19 19",
