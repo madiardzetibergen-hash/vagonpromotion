@@ -7,7 +7,7 @@ export const SITE = {
   secondaryPhoneDisplay: "+7 747 919 19 19",
   secondaryPhoneHref: "+77479191919",
   whatsapp: "77054706607",
-  email: "info@market-radio.kz",
+  email: "s_an_ta@bk.ru",
   city: "Алматы",
   country: "Казахстан"
 };
