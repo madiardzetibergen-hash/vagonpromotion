@@ -29,9 +29,9 @@ img{max-width:100%}
 .header .container{width:min(1400px,calc(100% - 44px))}
 .headerInner{min-height:78px;display:flex;align-items:center;gap:18px;padding:0 24px;border:1px solid rgba(255,255,255,.12);border-radius:8px;background:rgba(8,22,38,.64);backdrop-filter:blur(18px)}
 .brand{display:inline-flex;align-items:center}
-.brand img{width:208px;height:auto;display:block}
-.header .brand{min-width:292px;flex:0 0 292px}
-.header .brand img{width:276px}
+.brandMark{display:flex;align-items:center;justify-content:center}
+.brandMark img{width:178px;height:auto;display:block}
+.header .brand{min-width:186px;flex:0 0 186px}
 .nav{display:flex;align-items:center;justify-content:center;gap:22px;margin-left:0;flex:1 1 auto;min-width:0}
 .nav a{font-size:14px;font-weight:750;color:rgba(255,255,255,.78);transition:.18s}
 .nav a:hover{color:var(--gold-2)}
@@ -94,6 +94,9 @@ img{max-width:100%}
 .formatCard{background:white;border:1px solid var(--line);border-radius:8px;overflow:hidden;box-shadow:0 14px 36px rgba(8,22,38,.07);display:grid;grid-template-rows:168px 1fr}
 .formatImage{position:relative;background:#dde5ef}
 .formatImage img{object-fit:cover;transition:transform .35s}
+.formatImage[data-format="ticket"] img{object-fit:contain;object-position:center;background:#dfe8f2}
+.formatImage[data-format="app"] img{object-position:center 54%}
+.formatImage[data-format="video"] img,.formatImage[data-format="poster"] img{object-position:center}
 .formatCard:hover .formatImage img{transform:scale(1.035)}
 .formatBody{padding:18px 14px 20px;display:grid;align-content:start;gap:12px}
 .formatBody span{width:32px;height:32px;border-radius:8px;background:#fff6da;color:#a56d00;display:grid;place-items:center;font-size:18px}
@@ -186,9 +189,11 @@ input:focus,select:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 
 .formWhatsapp{text-align:center;color:#0a8d46;font-weight:850}
 
 .footer{background:#050f1d;color:white;padding:58px 0 26px}
-.footerTop{display:grid;grid-template-columns:1.4fr .8fr 1fr 1.1fr;gap:44px}
+.footerTop{display:grid;grid-template-columns:1.4fr .8fr 1fr 1.1fr;gap:44px;align-items:start}
 .footer .brand{min-width:0;flex:0 1 auto}
-.footer .brand img{width:208px}
+.footer .brandMark{transform:translateX(-92px)}
+.productionBadge{width:104px;margin-top:22px;margin-left:0;opacity:.96}
+.productionBadge img{display:block;width:100%;height:auto}
 .footer p{color:rgba(255,255,255,.58);max-width:300px;line-height:1.65}
 .footer h3{margin:0 0 15px;font-size:15px;color:white}
 .footer a{display:block;color:rgba(255,255,255,.64);margin:10px 0;font-size:14px}
@@ -211,7 +216,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 
   .nav,.headerRight{display:none}
   .mobileMenu{display:block}
   .header .brand{min-width:auto;flex:0 1 auto}
-  .header .brand img{width:224px}
+  .brandMark img{width:164px}
   .hero{min-height:auto}
   .heroContent{min-height:auto;padding-top:118px;padding-bottom:34px}
   .hero h1{font-size:clamp(34px,9vw,52px)}
@@ -240,7 +245,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 
   .header{padding-top:14px}
   .header .container{width:min(100% - 24px,var(--container))}
   .headerInner{min-height:60px}
-  .header .brand img{width:182px}
+  .brandMark img{width:132px}
   .heroMedia img{object-position:62% center}
   .heroOverlay{background:linear-gradient(180deg,rgba(8,22,38,.82),rgba(8,22,38,.84) 44%,rgba(8,22,38,.98)),linear-gradient(90deg,rgba(8,22,38,.8),rgba(8,22,38,.42))}
   .heroContent{padding-top:104px}
@@ -254,8 +259,12 @@ input:focus,select:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 
   .sectionTitle span{justify-content:flex-start}
   .sectionTitle h2,.contactCopy h2{font-size:29px}
   .formatGrid{grid-template-columns:1fr;gap:14px}
-  .formatCard{grid-template-rows:210px 1fr}
+  .formatCard{grid-template-rows:285px 1fr}
   .formatImage{display:block}
+  .formatImage img{object-position:center}
+  .formatImage[data-format="ticket"] img{object-fit:contain;object-position:center;background:#dfe8f2}
+  .formatImage[data-format="app"] img{object-position:center 52%}
+  .formatImage[data-format="poster"] img,.formatImage[data-format="video"] img{object-position:center}
   .formatBody{min-height:auto;padding:18px;text-align:left;place-items:start;align-content:start}
   .formatBody span{width:44px;height:44px;font-size:24px}
   .formatBody h3{font-size:18px}

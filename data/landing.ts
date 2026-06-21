@@ -10,7 +10,7 @@ export const formats = [
     icon: "ticket",
     title: "Электронный билет",
     description: "Ваш бренд появляется в билете до поездки и остается у пассажира в важный момент планирования.",
-    image: "/gallery/ticket-phone-ad.jpeg"
+    image: "/gallery/ticket-phone-ad-final.png"
   },
   {
     icon: "app",

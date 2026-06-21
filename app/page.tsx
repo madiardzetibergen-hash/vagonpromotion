@@ -18,12 +18,20 @@ const calculateMessage = "Здравствуйте, хочу рассчитат�
 const mediaKitHref = "/media/ktz-media-kit.pdf";
 const videoHref = "/media/train-ads-video.mp4";
 
+function BrandLogo() {
+  return (
+    <span className="brandMark">
+      <img src="/logo/passenger-carrier-new.svg" alt="АО Пассажирские перевозки" />
+    </span>
+  );
+}
+
 function Header() {
   return (
     <header className="header">
       <div className="container headerInner">
         <a href="#" className="brand" aria-label="На главную">
-          <img src="/logo/logo-full.svg" alt="Пассажирские перевозки. Рекламные возможности" />
+          <BrandLogo />
         </a>
         <nav className="nav" aria-label="Основная навигация">
           {NAV.map((item) => <a key={item.href} href={item.href}>{item.label}</a>)}
@@ -114,7 +122,7 @@ function Formats() {
         <div className="formatGrid">
           {formats.map((item) => (
             <article className="formatCard" key={item.title}>
-              <div className="formatImage">
+              <div className="formatImage" data-format={item.icon}>
                 <Image src={item.image} alt={item.title} fill sizes="(max-width: 768px) 100vw, 33vw" />
               </div>
               <div className="formatBody">
@@ -266,8 +274,11 @@ function Footer() {
     <footer className="footer">
       <div className="container footerTop">
         <div>
-          <a href="#" className="brand"><img src="/logo/logo-full.svg" alt="Пассажирские перевозки. Рекламные возможности" /></a>
+          <a href="#" className="brand"><BrandLogo /></a>
           <p>Реклама в поездах, вагонах и электронных билетах по всей территории Казахстана.</p>
+          <div className="productionBadge">
+            <img src="/logo/production-911-new.svg" alt="911 Production" />
+          </div>
         </div>
         <div>
           <h3>Навигация</h3>
