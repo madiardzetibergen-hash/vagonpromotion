@@ -3,7 +3,6 @@ import { ContactForm } from "@/components/ContactForm";
 import { JsonLd } from "@/components/JsonLd";
 import { NAV, SITE, whatsappLink } from "@/data/site";
 import { benefits, faq, formats, pricing, process, stats } from "@/data/landing";
-import { seoKeywordGroups, seoKeywords } from "@/data/seo";
 
 const iconFiles: Record<string, string> = {
   app: "screen",
@@ -270,44 +269,6 @@ function FAQ() {
   );
 }
 
-function SeoContent() {
-  return (
-    <section className="section light seoSection" aria-labelledby="seo-title">
-      <div className="container">
-        <SectionTitle
-          eyebrow="Офлайн-реклама с охватом"
-          title="Реклама на поездах и в вагонах по Казахстану"
-          description="Помогаем брендам разместить рекламу на железнодорожном транспорте, в пассажирских вагонах, электронных билетах, на вокзалах и в цифровых каналах пассажирской среды."
-        />
-        <div className="seoGrid">
-          {seoKeywordGroups.map((item) => (
-            <article className="seoCard" key={item.title}>
-              <h3>{item.title}</h3>
-              <p>{item.text}</p>
-            </article>
-          ))}
-        </div>
-        <div className="seoCopy">
-          <h3 id="seo-title">Где разместить рекламу для охвата по всей стране</h3>
-          <p>
-            Если бизнесу нужна эффективная офлайн-реклама, транспортная реклама и медийная кампания с большим охватом,
-            поезда становятся заметным каналом коммуникации. Форматы подходят для национальных брендов, крупных
-            рекламных проектов, имиджевых кампаний, продвижения компании и запуска нового продукта.
-          </p>
-          <p>
-            Можно заказать рекламу на поезде, рассчитать стоимость брендирования вагона, выбрать indoor или outdoor
-            формат, разместить рекламу в пассажирских поездах, на вагонах, в электронных билетах, на сайте и в
-            приложении. Команда подготовит варианты размещения, сроки, цену и медиакит под вашу задачу.
-          </p>
-        </div>
-        <div className="keywordCloud" aria-label="Популярные поисковые запросы">
-          {seoKeywords.slice(0, 56).map((keyword) => <span key={keyword}>{keyword}</span>)}
-        </div>
-      </div>
-    </section>
-  );
-}
-
 function Footer() {
   return (
     <footer className="footer">
@@ -365,7 +326,6 @@ export default function HomePage() {
         <Benefits />
         <Process />
         <FAQ />
-        <SeoContent />
         <ContactForm />
       </main>
       <Footer />
