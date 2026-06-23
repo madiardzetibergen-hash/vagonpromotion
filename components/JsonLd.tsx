@@ -1,5 +1,6 @@
 import { SITE } from "@/data/site";
 import { faq } from "@/data/landing";
+import { seoKeywords } from "@/data/seo";
 
 export function JsonLd() {
   const organization = {
@@ -18,8 +19,16 @@ export function JsonLd() {
     name: "Реклама в поездах, вагонах и электронных билетах Казахстана",
     provider: { "@type": "Organization", name: SITE.shortName, url: SITE.domain },
     areaServed: { "@type": "Country", name: "Kazakhstan" },
-    serviceType: ["Реклама в поездах", "Реклама в вагонах", "Реклама на электронных билетах", "Транспортная реклама"],
-    description: "Размещение рекламы в поездах, вагонах, электронных билетах, на сайте и в приложении."
+    serviceType: [
+      "Реклама в поездах",
+      "Реклама в вагонах",
+      "Реклама на электронных билетах",
+      "Транспортная реклама",
+      "Transit advertising",
+      "Брендирование вагонов"
+    ],
+    keywords: seoKeywords.join(", "),
+    description: "Размещение рекламы в поездах, вагонах, электронных билетах, на сайте, в приложении и на маршрутах Казахстана."
   };
 
   const faqPage = {

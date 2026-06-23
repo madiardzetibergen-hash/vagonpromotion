@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { SITE } from "@/data/site";
+import { seoKeywords } from "@/data/seo";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.domain),
@@ -8,15 +9,8 @@ export const metadata: Metadata = {
     default: "Реклама в поездах, вагонах и электронных билетах Казахстана",
     template: "%s | Market Radio"
   },
-  description: "Размещение рекламы в поездах, вагонах, электронных билетах, на сайте и в приложении. Получите медиакит или расчет под ваш бренд.",
-  keywords: [
-    "реклама в поездах Казахстана",
-    "реклама в вагонах",
-    "реклама на электронных билетах",
-    "транспортная реклама",
-    "реклама на железной дороге",
-    "bilet railways реклама"
-  ],
+  description: "Реклама в поездах Казахстана, брендирование вагонов, indoor, outdoor и transit advertising для крупного бизнеса. Получите медиакит или расчет размещения.",
+  keywords: seoKeywords,
   alternates: { canonical: "/" },
   icons: {
     icon: [
@@ -27,7 +21,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Реклама в поездах, вагонах и электронных билетах Казахстана",
-    description: "Форматы, прайс, медиакит и расчет размещения для B2B-рекламы в пассажирской среде.",
+    description: "Форматы, прайс, медиакит и расчет размещения рекламы в поездах, вагонах, билетах, на вокзалах и маршрутах Казахстана.",
     url: SITE.domain,
     siteName: SITE.shortName,
     locale: "ru_KZ",
@@ -37,7 +31,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Реклама в поездах Казахстана",
-    description: "Размещение рекламы в поездах, вагонах, билетах, на сайте и в приложении.",
+    description: "Размещение рекламы в поездах, вагонах, билетах, на сайте, в приложении и на маршрутах Казахстана.",
     images: ["/images/hero-block-img.png"]
   },
   robots: { index: true, follow: true }
