@@ -22,7 +22,7 @@ export const formats = [
     icon: "train",
     title: "Экстерьер вагонов",
     description: "Оклейка наружных поверхностей и окон для заметного контакта на маршрутах и станциях.",
-    image: "/gallery/train-door-branding.jpeg"
+    image: "/gallery/train-exterior-wrap-astana.jpeg"
   },
   {
     icon: "poster",

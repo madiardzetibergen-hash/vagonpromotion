@@ -116,6 +116,12 @@ img{max-width:100%}
 .mediaDownloads a:hover{transform:translateY(-2px);box-shadow:0 18px 44px rgba(8,22,38,.12)}
 .mediaDownloads b{font-size:22px;line-height:1.2}
 .mediaDownloads span{color:#5d6a7e;line-height:1.55}
+.formatVideoShowcase{margin-top:18px;border:1px solid var(--line);border-radius:8px;background:#f8fafc;box-shadow:0 14px 36px rgba(8,22,38,.07);display:grid;grid-template-columns:1fr 220px;gap:0;overflow:hidden}
+.formatVideoText{padding:24px;display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center}
+.formatVideoText>span{width:46px;height:46px;border-radius:8px;background:#fff6da;color:#a56d00;display:grid;place-items:center;font-size:25px}
+.formatVideoText h3{margin:0;font-size:22px;line-height:1.2}
+.formatVideoText p{margin:8px 0 0;color:#5d6a7e;font-size:14px;line-height:1.55}
+.formatVideoShowcase video{width:100%;height:100%;min-height:310px;display:block;background:#050f1d;object-fit:cover}
 .photoGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:18px}
 .photoCard{background:white;border:1px solid var(--line);border-radius:8px;overflow:hidden;box-shadow:0 12px 30px rgba(8,22,38,.06)}
 .photoCard>div{position:relative;aspect-ratio:3/4;background:#dce4ee;overflow:hidden}
@@ -224,6 +230,9 @@ input:focus,select:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 
   .heroStats{grid-template-columns:1fr 1fr;padding-bottom:0}
   .formatGrid{grid-template-columns:1fr 1fr}
   .mediaGrid{grid-template-columns:1fr}
+  .formatVideoShowcase{grid-template-columns:1fr}
+  .formatVideoText{grid-template-columns:auto 1fr}
+  .formatVideoText .button{grid-column:1/-1;width:max-content}
   .photoGrid{grid-template-columns:1fr 1fr}
   .caseGrid,.contactGrid,.faqPanel,.footerTop{grid-template-columns:1fr}
   .faqPanel{gap:22px}
@@ -272,6 +281,9 @@ input:focus,select:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 
   .benefitGrid,.processLine{grid-template-columns:1fr}
   .videoCaption{grid-template-columns:1fr}
   .videoCaption .button{width:100%}
+  .formatVideoText{grid-template-columns:1fr}
+  .formatVideoText .button{width:100%}
+  .formatVideoShowcase video{min-height:auto;aspect-ratio:9/16}
   .photoGrid{grid-template-columns:1fr}
   .caseText,.faqPanel,.contactGrid,.leadForm{padding:22px}
   .contactGrid{gap:20px}

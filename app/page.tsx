@@ -17,6 +17,7 @@ function Icon({ name }: { name: string }) {
 const calculateMessage = "Здравствуйте, хочу рассчитать размещение рекламы в поездах";
 const mediaKitHref = "/media/train-ads-presentation-2026.pdf";
 const videoHref = "/media/train-ads-video.mp4";
+const videoExampleHref = "/media/ktz-911-v3.mp4";
 
 function BrandLogo() {
   return (
@@ -132,6 +133,19 @@ function Formats() {
               </div>
             </article>
           ))}
+        </div>
+        <div className="formatVideoShowcase">
+          <div className="formatVideoText">
+            <span><Icon name="video" /></span>
+            <div>
+              <h3>Видео на экранах в вагонах</h3>
+              <p>Демонстрационный ролик показывает, как бренд может сопровождать пассажира во время поездки.</p>
+            </div>
+            <a className="button secondary small" href={videoExampleHref} target="_blank">Открыть ролик</a>
+          </div>
+          <video controls preload="metadata" playsInline>
+            <source src={videoExampleHref} type="video/mp4" />
+          </video>
         </div>
       </div>
     </section>
