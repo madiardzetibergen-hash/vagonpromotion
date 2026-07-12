@@ -138,8 +138,8 @@ function Formats() {
           <div className="formatVideoText">
             <span><Icon name="video" /></span>
             <div>
-              <h3>Видео на экранах в вагонах</h3>
-              <p>Демонстрационный ролик показывает, как бренд может сопровождать пассажира во время поездки.</p>
+              <h3>Видеоэфир в поездной среде</h3>
+              <p>Демонстрационный ролик показывает, как бренд встречает пассажира в вагоне и сопровождает его во время поездки.</p>
             </div>
             <a className="button secondary small" href={videoExampleHref} target="_blank">Открыть ролик</a>
           </div>
