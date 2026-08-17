@@ -1,69 +1,15 @@
 import Image from "next/image";
 import { ContactForm } from "@/components/ContactForm";
+import { Icon } from "@/components/Icon";
 import { JsonLd } from "@/components/JsonLd";
-import { NAV, SITE, whatsappLink } from "@/data/site";
+import { SectionTitle } from "@/components/SectionTitle";
+import { MobileSticky, SiteFooter, SiteHeader } from "@/components/SiteChrome";
 import { benefits, faq, formats, pricing, process, stats } from "@/data/landing";
+import { mediaCoverage } from "@/data/mediaCoverage";
+import { projects } from "@/data/projects";
 
-const iconFiles: Record<string, string> = {
-  app: "screen",
-  mediaKit: "media-kit"
-};
-
-function Icon({ name }: { name: string }) {
-  const file = iconFiles[name] ?? name;
-  return <img className="lineIcon" src={`/icons/${file}.svg`} alt="" aria-hidden="true" />;
-}
-
-const calculateMessage = "Здравствуйте, хочу рассчитать размещение рекламы в поездах";
 const mediaKitHref = "/media/train-ads-presentation-2026.pdf";
-const videoHref = "/media/train-ads-video.mp4";
 const videoExampleHref = "/media/ktz-911-v3.mp4";
-
-function BrandLogo() {
-  return (
-    <span className="brandMark">
-      <img src="/logo/passenger-carrier-new.svg" alt="АО Пассажирские перевозки" />
-    </span>
-  );
-}
-
-function Header() {
-  return (
-    <header className="header">
-      <div className="container headerInner">
-        <a href="#" className="brand" aria-label="На главную">
-          <BrandLogo />
-        </a>
-        <nav className="nav" aria-label="Основная навигация">
-          {NAV.map((item) => <a key={item.href} href={item.href}>{item.label}</a>)}
-        </nav>
-        <div className="headerRight">
-          <a className="phone" href={`tel:${SITE.phoneHref}`}>
-            <b>{SITE.phoneDisplay}</b>
-            <span>Звонок директору</span>
-          </a>
-          <a className="button primary small" href={mediaKitHref} download>Скачать медиакит</a>
-          <a className="waCircle" href={whatsappLink(calculateMessage)} target="_blank" aria-label="WhatsApp">
-            <img src="/icons/whatsapp.svg" alt="" aria-hidden="true" />
-          </a>
-        </div>
-        <details className="mobileMenu">
-          <summary aria-label="Открыть меню">
-            <span />
-            <span />
-            <span />
-          </summary>
-          <div className="mobileMenuPanel">
-            {NAV.map((item) => <a key={item.href} href={item.href}>{item.label}</a>)}
-            <a href={`tel:${SITE.phoneHref}`}>{SITE.phoneDisplay}</a>
-            <a href={`tel:${SITE.secondaryPhoneHref}`}>{SITE.secondaryPhoneDisplay}</a>
-            <a className="button primary" href={mediaKitHref} download>Скачать медиакит</a>
-          </div>
-        </details>
-      </div>
-    </header>
-  );
-}
 
 function Hero() {
   return (
@@ -102,16 +48,6 @@ function Hero() {
   );
 }
 
-function SectionTitle({ eyebrow, title, description }: { eyebrow: string; title: string; description?: string }) {
-  return (
-    <div className="sectionTitle">
-      <span>{eyebrow}</span>
-      <h2>{title}</h2>
-      {description && <p>{description}</p>}
-    </div>
-  );
-}
-
 function Formats() {
   return (
     <section className="section light" id="formats">
@@ -141,7 +77,7 @@ function Formats() {
               <h3>Видеоэфир в поездной среде</h3>
               <p>Демонстрационный ролик показывает, как бренд встречает пассажира в вагоне и сопровождает его во время поездки.</p>
             </div>
-            <a className="button secondary small" href={videoExampleHref} target="_blank">Открыть ролик</a>
+            <a className="button secondary small" href={videoExampleHref} target="_blank" rel="noopener noreferrer">Открыть ролик</a>
           </div>
           <video controls preload="metadata" playsInline>
             <source src={videoExampleHref} type="video/mp4" />
@@ -197,25 +133,123 @@ function Pricing() {
   );
 }
 
-function CaseStudy() {
+function ProjectsSection() {
   return (
-    <section className="section light compact" id="case">
-      <div className="container caseGrid">
-        <div className="caseText">
-          <span>Кейс</span>
-          <h2>Kaspi.kz</h2>
-          <p>Брендирование вагона для заметного контакта с пассажирами на маршрутах и станциях.</p>
-          <div className="casePoints">
-            <div><b>Задача</b><p>Показать бренд в реальной пассажирской среде и усилить узнаваемость в пути.</p></div>
-            <div><b>Решение</b><p>Оклейка наружной поверхности вагона с визуальной историей Kaspi.kz.</p></div>
-            <div><b>Результат</b><p>Постоянный визуальный контакт с пассажирами и посетителями станций.</p></div>
-          </div>
-          <a className="button secondary" href={videoHref} target="_blank">Смотреть кейс</a>
+    <section className="section light compact projectsSection" id="case">
+      <div className="container">
+        <SectionTitle
+          eyebrow="Кейсы"
+          title="Реализованные проекты"
+          description="Реклама, которая работает в реальной пассажирской среде"
+        />
+        <div className="projectsList">
+          {projects.map((project) => (
+            <article className="caseGrid projectCard" key={project.id}>
+              <div className="caseText">
+                <span>{project.number} — {project.label}</span>
+                {project.year && <b className="projectYear">{project.year}</b>}
+                <h2>{project.title}</h2>
+                {project.subtitle && <p className="projectSubtitle">{project.subtitle}</p>}
+                <p>{project.description}</p>
+                {project.video && (
+                  <div className="casePoints">
+                    {project.details.map((detail) => (
+                      <div key={detail.label}>
+                        <b>{detail.label}</b>
+                        <p>{detail.text}</p>
+                      </div>
+                    ))}
+                  </div>
+                )}
+                {project.tags.length > 0 && (
+                  <div className="projectTags" aria-label="Характеристики проекта">
+                    {project.tags.map((tag) => <span key={tag}>{tag}</span>)}
+                  </div>
+                )}
+                <a
+                  className="button secondary"
+                  href={project.ctaHref}
+                  target={project.ctaTarget}
+                  rel={project.ctaRel}
+                >
+                  {project.ctaLabel}
+                </a>
+              </div>
+              <div className="caseVideo projectImage">
+                {project.video ? (
+                  <video controls preload="metadata">
+                    <source src={project.video} type="video/mp4" />
+                  </video>
+                ) : project.cover ? (
+                  <Image
+                    src={project.cover}
+                    alt={project.coverAlt ?? project.title}
+                    width={1600}
+                    height={900}
+                    sizes="(max-width: 768px) 100vw, 58vw"
+                  />
+                ) : null}
+              </div>
+            </article>
+          ))}
         </div>
-        <div className="caseVideo">
-          <video controls preload="metadata">
-            <source src={videoHref} type="video/mp4" />
-          </video>
+      </div>
+    </section>
+  );
+}
+
+function MediaProofStrip() {
+  return (
+    <section className="section light compact mediaTrainSection" aria-label="Проект в СМИ">
+      <div className="container mediaTrainInner">
+        <SectionTitle
+          eyebrow="ПРОЕКТ В СМИ"
+          title="Информационный маршрут проекта"
+          description="Запуск тематического поезда получил освещение в государственных и республиканских информационных ресурсах."
+        />
+        <div className="mediaTrain">
+          <div className="mediaTrainLocomotive" aria-hidden="true">
+            <span className="mediaTrainChimney" />
+            <span className="mediaTrainCab">
+              <i className="mediaTrainCabWindow" />
+            </span>
+            <span className="mediaTrainNose">
+              <i className="mediaTrainLight" />
+            </span>
+            <span className="mediaTrainLocomotiveWheels">
+              <i />
+              <i />
+              <i />
+            </span>
+          </div>
+          <ul className="mediaTrainCars" aria-label="Публикации о проекте">
+            {mediaCoverage.map((item) => (
+              <li className="mediaTrainCarItem" key={item.id}>
+                <a
+                  className="mediaTrainCar"
+                  href={item.url}
+                  target={item.target}
+                  rel={item.rel}
+                  title={item.title}
+                  aria-label={item.source + ": " + item.title + ". Читать публикацию. Откроется в новой вкладке"}
+                >
+                  <span className="mediaTrainCarRoof" aria-hidden="true" />
+                  <strong className="mediaTrainSource">{item.source}</strong>
+                  <span className="mediaTrainType">{item.sourceType}</span>
+                  <span className="mediaTrainCta">Читать публикацию ↗</span>
+                  <span className="mediaTrainCoupler" aria-hidden="true" />
+                  <span className="mediaTrainWheels" aria-hidden="true">
+                    <i />
+                    <i />
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
+          <div className="mediaTrainTrack" aria-hidden="true">
+            <span />
+            <span />
+          </div>
         </div>
       </div>
     </section>
@@ -243,17 +277,28 @@ function Benefits() {
 
 function Process() {
   return (
-    <section className="section tint compact">
+    <section className="section tint compact processRailSection" aria-label="Как запустить рекламу">
       <div className="container">
         <SectionTitle eyebrow="Как запустить рекламу" title="Простой процесс от заявки до запуска" />
-        <div className="processLine">
-          {process.map((item, index) => (
-            <article className="processStep" key={item.title}>
-              <i>{String(index + 1).padStart(2, "0")}</i>
-              <h3>{item.title}</h3>
-              <p>{item.description}</p>
-            </article>
-          ))}
+        <div className="processRail">
+          <div className="processRailTrack" aria-hidden="true">
+            <span className="processRailTrackLine" />
+            <span className="processRailTrackSleepers" />
+          </div>
+          <ol className="processRailStations" aria-label="Этапы запуска рекламы">
+            {process.map((item, index) => (
+              <li className="processRailStation" key={item.title}>
+                <article className="processRailCard">
+                  <span className="processRailMarker" aria-hidden="true">
+                    <i />
+                  </span>
+                  <span className="processRailNumber">{String(index + 1).padStart(2, "0")}</span>
+                  <h3>{item.title}</h3>
+                  <p>{item.description}</p>
+                </article>
+              </li>
+            ))}
+          </ol>
         </div>
       </div>
     </section>
@@ -283,67 +328,24 @@ function FAQ() {
   );
 }
 
-function Footer() {
-  return (
-    <footer className="footer">
-      <div className="container footerTop">
-        <div>
-          <a href="#" className="brand"><BrandLogo /></a>
-          <p>Реклама в поездах, вагонах и электронных билетах по всей территории Казахстана.</p>
-          <div className="productionBadge">
-            <img src="/logo/production-911-new.svg" alt="911 Production" />
-          </div>
-        </div>
-        <div>
-          <h3>Навигация</h3>
-          {NAV.map((item) => <a key={item.href} href={item.href}>{item.label}</a>)}
-        </div>
-        <div>
-          <h3>Форматы</h3>
-          {formats.slice(0, 5).map((item) => <a key={item.title} href="#formats">{item.title}</a>)}
-        </div>
-        <div>
-          <h3>Контакты</h3>
-          <a href={`tel:${SITE.phoneHref}`}>{SITE.phoneDisplay}</a>
-          <a href={`tel:${SITE.secondaryPhoneHref}`}>{SITE.secondaryPhoneDisplay}</a>
-          <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
-          <a className="button secondary" href={whatsappLink(calculateMessage)} target="_blank">Написать в WhatsApp</a>
-        </div>
-      </div>
-      <div className="container footerBottom">
-        <span>© 2026 Market Radio. Все права защищены.</span>
-        <span>Политика конфиденциальности · Договор оферты</span>
-      </div>
-    </footer>
-  );
-}
-
-function MobileSticky() {
-  return (
-    <div className="mobileSticky">
-      <a className="button primary" href={mediaKitHref} download>Медиакит</a>
-      <a className="button secondary" href="#contact">Расчет</a>
-    </div>
-  );
-}
-
 export default function HomePage() {
   return (
     <>
       <JsonLd />
-      <Header />
+      <SiteHeader basePath="" />
       <main>
         <Hero />
         <Formats />
         <Pricing />
-        <CaseStudy />
+        <ProjectsSection />
+        <MediaProofStrip />
         <Benefits />
         <Process />
         <FAQ />
         <ContactForm />
       </main>
-      <Footer />
-      <MobileSticky />
+      <SiteFooter basePath="" />
+      <MobileSticky basePath="" />
     </>
   );
 }

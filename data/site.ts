@@ -15,7 +15,7 @@ export const SITE = {
 export const NAV = [
   { label: "Форматы", href: "#formats" },
   { label: "Прайс", href: "#pricing" },
-  { label: "Кейс", href: "#case" },
+  { label: "Проекты", href: "#case" },
   { label: "Преимущества", href: "#benefits" },
   { label: "FAQ", href: "#faq" },
   { label: "Контакты", href: "#contact" }

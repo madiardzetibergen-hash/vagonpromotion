@@ -15,7 +15,7 @@ export function ContactForm() {
       `Срок: ${form.get("period")}`,
       `Комментарий: ${form.get("comment") || "-"}`
     ].join("\n");
-    window.open(whatsappLink(message), "_blank");
+    window.open(whatsappLink(message), "_blank", "noopener,noreferrer");
   }
 
   return (
@@ -28,7 +28,7 @@ export function ContactForm() {
           <div className="contactDirect">
             <a href={`tel:${SITE.phoneHref}`}>{SITE.phoneDisplay}</a>
             <a href={`tel:${SITE.secondaryPhoneHref}`}>{SITE.secondaryPhoneDisplay}</a>
-            <a href={whatsappLink("Здравствуйте, хочу обсудить рекламу в поездах")} target="_blank">Написать в WhatsApp</a>
+            <a href={whatsappLink("Здравствуйте, хочу обсудить рекламу в поездах")} target="_blank" rel="noopener noreferrer">Написать в WhatsApp</a>
           </div>
         </div>
         <form className="leadForm" onSubmit={onSubmit}>
@@ -72,7 +72,7 @@ export function ContactForm() {
             <textarea name="comment" placeholder="Маршрут, город, аудитория или примерный бюджет" />
           </label>
           <button className="button primary" type="submit">Рассчитать размещение</button>
-          <a className="formWhatsapp" href={whatsappLink("Здравствуйте, хочу получить медиакит по рекламе в поездах")} target="_blank">Или сразу написать в WhatsApp</a>
+          <a className="formWhatsapp" href={whatsappLink("Здравствуйте, хочу получить медиакит по рекламе в поездах")} target="_blank" rel="noopener noreferrer">Или сразу написать в WhatsApp</a>
         </form>
       </div>
     </section>
