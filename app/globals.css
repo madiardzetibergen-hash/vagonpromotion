@@ -142,6 +142,7 @@ img{max-width:100%}
 .pricingBox td:first-child{font-weight:850;color:var(--ink)}
 .pricingBox td:last-child{color:#a56d00;font-weight:900;white-space:nowrap}
 .pricingMobile{display:none}
+.pricingTax{display:block;margin-top:4px;font-size:12px;font-weight:400;color:#6b7688}
 .pricingNote{text-align:center;margin:18px 0 0;color:#6b7688;font-size:12px}
 
 .caseGrid{display:grid;grid-template-columns:.82fr 1.18fr;gap:24px;align-items:start}
