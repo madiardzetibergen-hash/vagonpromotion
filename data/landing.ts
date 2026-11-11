@@ -44,7 +44,7 @@ export const formats = [
   }
 ];
 
-export const pricing2025 = [
+export const pricing2026 = [
   { format: "Электронный билет", includes: "Место на электронном билете", period: "1 месяц", price: "от 5 000 000 ₸" },
   { format: "Сайт и приложение", includes: "Pop-up, строки, баннеры в приложении", period: "1 месяц", price: "от 1 000 000 ₸" },
   { format: "Экстерьер вагонов", includes: "Брендирование окон и наружных поверхностей", period: "от 1 месяца", price: "от 600 000 ₸" },
@@ -53,7 +53,7 @@ export const pricing2025 = [
   { format: "Видео эфир", includes: "Трансляция видеороликов на экранах", period: "1 месяц", price: "от 300 000 ₸" }
 ];
 
-export const pricing2026 = [
+export const pricing2027 = [
   { format: "Электронный билет", includes: "Место на электронном билете", period: "1 месяц", price: "от 5 000 000 ₸" },
   { format: "Сайт и приложение", includes: "Pop-up, строки, баннеры в приложении", period: "1 месяц", price: "от 1 000 000 ₸" },
   { format: "Экстерьер вагонов", includes: "Брендирование окон и наружных поверхностей", period: "от 1 месяца", price: "от 1 500 000 ₸" },
@@ -61,6 +61,8 @@ export const pricing2026 = [
   { format: "Аудио эфир", includes: "Рекламные аудиоролики в 4–24 вагонах", period: "1 месяц", price: "от 300 000 ₸" },
   { format: "Видео эфир", includes: "Трансляция видеороликов на 8 экранах", period: "1 месяц", price: "от 400 000 ₸" }
 ];
+
+export const pricing2025 = pricing2026;
 
 export const benefits = [
   { icon: "users", title: "Масштабный охват", description: "Тысячи пассажиров ежедневно по всей стране и на ключевых направлениях." },

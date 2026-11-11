@@ -4,7 +4,7 @@ import { Icon } from "@/components/Icon";
 import { JsonLd } from "@/components/JsonLd";
 import { SectionTitle } from "@/components/SectionTitle";
 import { MobileSticky, SiteFooter, SiteHeader } from "@/components/SiteChrome";
-import { benefits, faq, formats, pricing2025, pricing2026, process, stats } from "@/data/landing";
+import { benefits, faq, formats, pricing2026, pricing2027, process, stats } from "@/data/landing";
 import { mediaCoverage } from "@/data/mediaCoverage";
 import { projects } from "@/data/projects";
 
@@ -88,9 +88,9 @@ function Formats() {
   );
 }
 
-function Pricing({ year, items }: { year: 2025 | 2026; items: typeof pricing2025 }) {
+function Pricing({ year, items }: { year: 2026 | 2027; items: typeof pricing2026 }) {
   return (
-    <section className="section light pricingCaseSection" id={year === 2025 ? "pricing" : "pricing-2026"}>
+    <section className="section light pricingCaseSection" id={year === 2026 ? "pricing" : "pricing-2027"}>
       <div className="container pricingInner">
         <SectionTitle
           eyebrow={`Прайс-лист ${year}`}
@@ -112,7 +112,7 @@ function Pricing({ year, items }: { year: 2025 | 2026; items: typeof pricing2025
                   <td>{item.format}</td>
                   <td>{item.includes}</td>
                   <td>{item.period}</td>
-                  <td>{item.price}{year === 2026 && item.price.includes("₸") && <small className="pricingTax">без НДС</small>}</td>
+                  <td>{item.price}{year === 2027 && item.price.includes("₸") && <small className="pricingTax">без НДС</small>}</td>
                 </tr>
               ))}
             </tbody>
@@ -122,7 +122,7 @@ function Pricing({ year, items }: { year: 2025 | 2026; items: typeof pricing2025
               <article key={item.format}>
                 <h3>{item.format}</h3>
                 <p>{item.includes}</p>
-                <div><span>{item.period}</span><b>{item.price}{year === 2026 && item.price.includes("₸") && <small className="pricingTax">без НДС</small>}</b></div>
+                <div><span>{item.period}</span><b>{item.price}{year === 2027 && item.price.includes("₸") && <small className="pricingTax">без НДС</small>}</b></div>
               </article>
             ))}
           </div>
@@ -336,8 +336,8 @@ export default function HomePage() {
       <main>
         <Hero />
         <Formats />
-        <Pricing year={2025} items={pricing2025} />
         <Pricing year={2026} items={pricing2026} />
+        <Pricing year={2027} items={pricing2027} />
         <ProjectsSection />
         <MediaProofStrip />
         <Benefits />

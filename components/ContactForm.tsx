@@ -27,7 +27,6 @@ export function ContactForm() {
           <p>Опишите задачу в двух словах. Менеджер уточнит детали, подберет носители и подготовит предложение по срокам и бюджету.</p>
           <div className="contactDirect">
             <a href={`tel:${SITE.phoneHref}`}>{SITE.phoneDisplay}</a>
-            <a href={`tel:${SITE.secondaryPhoneHref}`}>{SITE.secondaryPhoneDisplay}</a>
             <a href={whatsappLink("Здравствуйте, хочу обсудить рекламу в поездах")} target="_blank" rel="noopener noreferrer">Написать в WhatsApp</a>
           </div>
         </div>

@@ -59,7 +59,6 @@ export function SiteHeader({ basePath = "/" }: SiteChromeProps) {
               <a key={item.href} href={hashHref(item.href, basePath)}>{item.label}</a>
             ))}
             <a href={`tel:${SITE.phoneHref}`}>{SITE.phoneDisplay}</a>
-            <a href={`tel:${SITE.secondaryPhoneHref}`}>{SITE.secondaryPhoneDisplay}</a>
             <a className="button primary" href={mediaKitHref} download>Скачать медиакит</a>
           </div>
         </details>
@@ -94,7 +93,6 @@ export function SiteFooter({ basePath = "/" }: SiteChromeProps) {
         <div>
           <h3>Контакты</h3>
           <a href={`tel:${SITE.phoneHref}`}>{SITE.phoneDisplay}</a>
-          <a href={`tel:${SITE.secondaryPhoneHref}`}>{SITE.secondaryPhoneDisplay}</a>
           <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
           <a
             className="button secondary"
